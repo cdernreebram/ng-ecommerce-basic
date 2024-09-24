@@ -1,0 +1,26 @@
+<div class="container">
+    <!--left side-->
+    <div class="row product-detail">
+        <div class="col-sm-3 text-center d-flex flex-column align-items-center">
+            <img class="product-img" src="{{productdata?.images[0]}}">
+            <div class="mt-3">
+                <button (click)="addtocart(productdata)" class="btn btn-success"> Add to Cart</button>
+            </div>
+        </div>
+
+        <!--right side-->
+        <div class="col-sm-8">
+            <div>
+                <h1>{{productdata?.title}}</h1>
+                <p style="color: green;">Special Price</p>
+                <h3>Price: {{productdata?.price}}$</h3>
+                <strong>Category:&nbsp;{{productdata?.category}}</strong><br>
+                <strong>Description:</strong><br>
+                <p>{{productdata?.description}}</p>
+                <p style="color: green;">Discount: {{productdata?.discountPercentage}} %</p>
+                <strong>Stocks: {{productdata?.stock}} Units left</strong><br>
+                <button routerLink="/" class="btn btn-warning text-light mt-2">Back</button>
+            </div>
+        </div>
+    </div>
+</div>

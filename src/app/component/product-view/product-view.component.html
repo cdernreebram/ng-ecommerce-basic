@@ -1,0 +1,33 @@
+<!--Product Display-->
+<div class="container-fluid" style="background-color: rgb(255, 255, 255);">
+    <div class="row">
+        <div class="col-md-2 mt-3" *ngFor="let item of data?.products">
+            <div class="card mt-2">
+                <div class="card-body">
+                    <div class="card-img-actions">
+                        <img routerLink="/product-detail/{{item.id}}" src="{{item.thumbnail}}"
+                            class="card-img img-fluid" />
+                    </div>
+                </div>
+                <div class="card-body bg-light text-center">
+                    <div>
+                        <h6 class="font-weight-semibold">
+                            <a class="text-default">{{item.title}}</a>
+                        </h6>
+                    </div>
+                    <h3 class="mb-0 font-weight-semibold">
+                        $ {{item.price}}
+                    </h3>
+                    <button routerLink="/product-detail/{{item.id}}" class="btn btn-info mt-2 btn-white-text"><i
+                            class="fa fa-solid fa-info mr-2"></i>
+                        &nbsp;view details
+                    </button>
+                    <button (click)="addtocart(item)" class="btn btn-success mt-2"><i class="fa fa-cart-plus mr-2"></i>
+                        &nbsp;Add to Cart
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
